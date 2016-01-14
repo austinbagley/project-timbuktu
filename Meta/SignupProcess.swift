@@ -18,12 +18,42 @@ class SignupProcess {
     var team = PFObject(className: "Team")
     var currentUser = PFUser.currentUser()
     var goalObjectId = ""
+    var users = PFUser()
+
     
     
     // MARK: Actions
     
     
     // Create Team & Update User with Team Object ID
+    
+    func signUp(username: String?, password: String?, email: String?, firstName: String?, lastName: String?, callBack: () -> Void) -> String? {
+        var responseString = "Nothing so far"
+        let user = PFUser()
+        
+        user.username = username
+        user.password = password
+        user.email = email
+        // other fields can be set just like with PFObject
+        user["firstName"] = firstName
+        user["lastName"] = lastName
+        
+        user.signUpInBackgroundWithBlock {
+            (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error {
+                let errorString = error.userInfo["error"] as! String?
+                responseString = errorString!
+            } else {
+                // Hooray! Let them use the app now.
+                responseString = "Success"
+                print(responseString)
+                callBack()
+            }
+        }
+        
+        return responseString
+        
+    }
     
     func createTeam(teamName: String, teamPassword: String, endDate: NSDate?, callBack: () -> Void) {
         
@@ -84,6 +114,7 @@ class SignupProcess {
         return objectId
     }
     
+    
     func setGoalType(isWeightGoal: Bool, callBack: () -> Void) {
         let isWeightGoal = isWeightGoal
         let currentUser = (self.currentUser?.objectId!)!
@@ -104,8 +135,8 @@ class SignupProcess {
             }
         }
         
-        
     }
+    
     
     func setWeightGoal(startWeight: Double, endWeight: Double, callBack: () -> Void) {
         

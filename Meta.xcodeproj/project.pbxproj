@@ -14,7 +14,11 @@
 		81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81781A49E0DB00E65899 /* AudioToolbox.framework */; };
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
+		9D1776FA1C480D38004B85C2 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1776F91C480D38004B85C2 /* Goal.swift */; };
+		9D1776FF1C482264004B85C2 /* SubGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1776FE1C482264004B85C2 /* SubGoal.swift */; };
+		9D1777011C482F24004B85C2 /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1777001C482F23004B85C2 /* signUp.swift */; };
 		9DBF62361C3AF1C400042643 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF62351C3AF1C400042643 /* ColorExtension.swift */; };
+		9DE085B01C45AF5A009A8DE6 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE085AF1C45AF5A009A8DE6 /* Team.swift */; };
 		9DF0CE5B1C3C5AFA004C98A2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0CE5A1C3C5AFA004C98A2 /* Colors.swift */; };
 		9DF0CE651C3C5B17004C98A2 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0CE5C1C3C5B17004C98A2 /* DashboardViewController.swift */; };
 		9DF0CE661C3C5B17004C98A2 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0CE5D1C3C5B17004C98A2 /* LaunchViewController.swift */; };
@@ -34,8 +38,7 @@
 		9DF0CE7F1C3C5BB3004C98A2 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0CE7A1C3C5BB3004C98A2 /* Dashboard.swift */; };
 		9DF0CE801C3C5BB3004C98A2 /* goalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0CE7B1C3C5BB3004C98A2 /* goalData.swift */; };
 		9DF0CE811C3C5BB3004C98A2 /* SignupProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0CE7C1C3C5BB3004C98A2 /* SignupProcess.swift */; };
-		9DF0CE821C3C5BB3004C98A2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0CE7D1C3C5BB3004C98A2 /* User.swift */; };
-		9DF0CE831C3C5BB3004C98A2 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0CE7E1C3C5BB3004C98A2 /* UserData.swift */; };
+		9DF0CE831C3C5BB3004C98A2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0CE7E1C3C5BB3004C98A2 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +54,12 @@
 		81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		9D1776F91C480D38004B85C2 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = SOURCE_ROOT; };
+		9D1776FB1C481C15004B85C2 /* Meta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Meta-Bridging-Header.h"; sourceTree = "<group>"; };
+		9D1776FE1C482264004B85C2 /* SubGoal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubGoal.swift; sourceTree = SOURCE_ROOT; };
+		9D1777001C482F23004B85C2 /* signUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = SOURCE_ROOT; };
 		9DBF62351C3AF1C400042643 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		9DE085AF1C45AF5A009A8DE6 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = SOURCE_ROOT; };
 		9DF0CE5A1C3C5AFA004C98A2 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Meta/Colors.swift; sourceTree = SOURCE_ROOT; };
 		9DF0CE5C1C3C5B17004C98A2 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewController.swift; path = Meta/DashboardViewController.swift; sourceTree = SOURCE_ROOT; };
 		9DF0CE5D1C3C5B17004C98A2 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = Meta/LaunchViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -71,8 +79,7 @@
 		9DF0CE7A1C3C5BB3004C98A2 /* Dashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dashboard.swift; path = Meta/Dashboard.swift; sourceTree = SOURCE_ROOT; };
 		9DF0CE7B1C3C5BB3004C98A2 /* goalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = goalData.swift; path = Meta/goalData.swift; sourceTree = SOURCE_ROOT; };
 		9DF0CE7C1C3C5BB3004C98A2 /* SignupProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupProcess.swift; path = Meta/SignupProcess.swift; sourceTree = SOURCE_ROOT; };
-		9DF0CE7D1C3C5BB3004C98A2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Meta/User.swift; sourceTree = SOURCE_ROOT; };
-		9DF0CE7E1C3C5BB3004C98A2 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = Meta/UserData.swift; sourceTree = SOURCE_ROOT; };
+		9DF0CE7E1C3C5BB3004C98A2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Meta/User.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +106,7 @@
 				814C3AC91B69877600E307BB /* Info.plist */,
 				9DBF62351C3AF1C400042643 /* ColorExtension.swift */,
 				9DF0CE5A1C3C5AFA004C98A2 /* Colors.swift */,
+				9D1776FB1C481C15004B85C2 /* Meta-Bridging-Header.h */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -159,11 +167,10 @@
 		9D1F97991C37A57D00534EAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9DE085AE1C45A7B1009A8DE6 /* Data Model */,
 				9DF0CE7A1C3C5BB3004C98A2 /* Dashboard.swift */,
 				9DF0CE7B1C3C5BB3004C98A2 /* goalData.swift */,
 				9DF0CE7C1C3C5BB3004C98A2 /* SignupProcess.swift */,
-				9DF0CE7D1C3C5BB3004C98A2 /* User.swift */,
-				9DF0CE7E1C3C5BB3004C98A2 /* UserData.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -197,6 +204,18 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		9DE085AE1C45A7B1009A8DE6 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DF0CE7E1C3C5BB3004C98A2 /* User.swift */,
+				9DE085AF1C45AF5A009A8DE6 /* Team.swift */,
+				9D1776F91C480D38004B85C2 /* Goal.swift */,
+				9D1776FE1C482264004B85C2 /* SubGoal.swift */,
+				9D1777001C482F23004B85C2 /* signUp.swift */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,7 +243,7 @@
 		81BA813D1A49DA1800E65899 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Bagley;
 				TargetAttributes = {
@@ -290,8 +309,10 @@
 				9DF0CE6B1C3C5B17004C98A2 /* LoginViewController.swift in Sources */,
 				9DF0CE651C3C5B17004C98A2 /* DashboardViewController.swift in Sources */,
 				9DF0CE691C3C5B17004C98A2 /* GoalTypeViewController.swift in Sources */,
-				9DF0CE831C3C5BB3004C98A2 /* UserData.swift in Sources */,
+				9DF0CE831C3C5BB3004C98A2 /* User.swift in Sources */,
 				9DF0CE711C3C5B5E004C98A2 /* WeightGoalViewController.swift in Sources */,
+				9DE085B01C45AF5A009A8DE6 /* Team.swift in Sources */,
+				9D1777011C482F24004B85C2 /* signUp.swift in Sources */,
 				9DF0CE731C3C5B6B004C98A2 /* AppDelegate.swift in Sources */,
 				9DF0CE6F1C3C5B4E004C98A2 /* TeamSelectionViewController.swift in Sources */,
 				9DF0CE811C3C5BB3004C98A2 /* SignupProcess.swift in Sources */,
@@ -299,14 +320,15 @@
 				9DF0CE771C3C5B93004C98A2 /* LaunchView.swift in Sources */,
 				9DF0CE801C3C5BB3004C98A2 /* goalData.swift in Sources */,
 				9DF0CE681C3C5B17004C98A2 /* CreateTeamViewController.swift in Sources */,
+				9D1776FA1C480D38004B85C2 /* Goal.swift in Sources */,
 				9DF0CE5B1C3C5AFA004C98A2 /* Colors.swift in Sources */,
 				9DF0CE6C1C3C5B17004C98A2 /* MilestoneViewController.swift in Sources */,
 				9DF0CE6A1C3C5B17004C98A2 /* JoinTeamViewController.swift in Sources */,
 				9DF0CE661C3C5B17004C98A2 /* LaunchViewController.swift in Sources */,
-				9DF0CE821C3C5BB3004C98A2 /* User.swift in Sources */,
 				9DBF62361C3AF1C400042643 /* ColorExtension.swift in Sources */,
 				9DF0CE7F1C3C5BB3004C98A2 /* Dashboard.swift in Sources */,
 				9DF0CE6D1C3C5B17004C98A2 /* RegisterViewController.swift in Sources */,
+				9D1776FF1C482264004B85C2 /* SubGoal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -406,7 +429,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bagley.TeamGoal;
 				PRODUCT_NAME = Meta;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Resources/Meta-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -416,6 +440,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -425,7 +450,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bagley.TeamGoal;
 				PRODUCT_NAME = Meta;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Resources/Meta-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

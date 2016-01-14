@@ -15,7 +15,6 @@ class AchieveGoalViewController: UIViewController {
     // MARK: Properties
 
 
-    var awesome
     // MARK: Outlets
     
     // MARK: View Controller lifecycle

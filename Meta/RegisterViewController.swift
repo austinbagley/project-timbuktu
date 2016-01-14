@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController {
     // MARK: Properties
     
     var users = User()
+    var signup = SignupProcess()
     
     // MARK: Outlets
     
@@ -47,7 +48,7 @@ class RegisterViewController: UIViewController {
         let firstName = self.firstName.text!
         let lastName = self.lastName.text!
         
-        users.signUp(username, password: pw, email: email, firstName: firstName, lastName: lastName, callBack: {
+        signup.signUp(username, password: pw, email: email, firstName: firstName, lastName: lastName, callBack: {
             self.performSegueWithIdentifier("showTeamSelection", sender: self)
         })
         
