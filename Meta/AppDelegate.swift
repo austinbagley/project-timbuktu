@@ -34,6 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // ****************************************************************************
         // ParseCrashReporting.enable()
         
+//        CustomUser.registerSubclass()
+        Team.registerSubclass()
+        Goal.registerSubclass()
+        SubGoal.registerSubclass()
+        
         Parse.setApplicationId("rJNWVh8k1aXO0LCDASrFX9pCqRf5kvYSbRw8BT50",
             clientKey: "1wmj7BmKy8WU1Rt4N2J2j78YYTRYGn9CV282inI5")
         

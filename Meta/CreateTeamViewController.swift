@@ -18,8 +18,9 @@ class CreateTeamViewController: UIViewController {
     
     // MARK: Properties
     
-    var signup = SignupProcess()
-//    var user = User().users
+    var signup = SignUp()
+
+    //    var user = User().users
 //    var currentUser = User().user
     
     // MARK: Outlets
@@ -43,13 +44,23 @@ class CreateTeamViewController: UIViewController {
         let endDate = self.endDate.date
         
         
-        signup.createTeam(teamName, teamPassword: teamPassword, endDate: endDate, callBack: {
+        signup.team = signup.createTeam(teamName, teamPassword: teamPassword, endDate: endDate, callBack: {
+            print("create team vc team is \(self.signup.team)")
             self.performSegueWithIdentifier("showGoalType", sender: self)
         })
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == SEGUE_TO_GOAL_TYPE {
+            if let destVC = segue.destinationViewController as? GoalTypeViewController {
+                destVC.team = signup.team
+            }
+        }
+    }
     
+    
+        
     
     
 }

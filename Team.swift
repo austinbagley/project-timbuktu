@@ -48,6 +48,14 @@ class Team: PFObject, PFSubclassing {
     
     // Read
     
+    override init() {
+        super.init()
+        teamName = nil
+        teamChallengeName = nil
+        teamPassword = nil
+        teamEndDate = nil
+    }
+    
     init(id: String) {
         super.init()
         

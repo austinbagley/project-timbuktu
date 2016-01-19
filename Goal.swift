@@ -28,47 +28,49 @@ class Goal: PFObject, PFSubclassing {
     }
     
     
-    @NSManaged var user: User?
+    @NSManaged var user: PFUser
     @NSManaged var team: Team?
     
-    var isWeightGoal: Bool?
-    var startWeight: Double?
-    var endWeight: Double?
-    var totalWeightLoss: Double?
-    var achieveTitle: String?
-    var isAchieved: Bool?
+    @NSManaged var isWeightGoal: String?
+    @NSManaged var startWeight: NSNumber?
+    @NSManaged var endWeight: NSNumber?
+    @NSManaged var totalWeightLoss: NSNumber?
+    @NSManaged var achieveTitle: String?
+    @NSManaged var isAchieved: String?
+    
+   
     
     
     // Create
     
     init(startWeight: Double, endWeight: Double) {
         super.init()
-        user = User.currentUser()
-        isWeightGoal = true
+        user = PFUser.currentUser()!
+        isWeightGoal = "true"
         self.startWeight = startWeight
         self.endWeight = endWeight
         totalWeightLoss = startWeight - endWeight
         achieveTitle = nil
         isAchieved = nil
         
-        let teamId = user?.userCurrentTeam
-        self.team = getTeamObjectFromTeamObjectId(teamId)
-    }
-    
-    init(achieveTitle: String) {
-        super.init()
-        user = User.currentUser()
-        isWeightGoal = false
-        startWeight = nil
-        endWeight = nil
-        totalWeightLoss = nil
-        self.achieveTitle = achieveTitle
-        isAchieved = false
+        print("Goal current user is: \(PFUser.currentUser())")
+        self.team = nil
         
-        let teamId = user?.userCurrentTeam
-        self.team = getTeamObjectFromTeamObjectId(teamId)
-    
     }
+//    init(achieveTitle: String) {
+//        super.init()
+//        user = PFUser.currentUser()!
+//        isWeightGoal = "false"
+//        startWeight = nil
+//        endWeight = nil
+//        totalWeightLoss = nil
+//        self.achieveTitle = achieveTitle
+//        isAchieved = false
+//        
+//        let teamId = user["userCurrentTeam"] as? String
+//        self.team = getTeamObjectFromTeamObjectId(teamId)
+//    
+//    }
     
     // Read
     
@@ -108,7 +110,7 @@ class Goal: PFObject, PFSubclassing {
     
     func getGoalObjectsForUserObject(user: PFUser) -> [Goal] {
         let query = Goal.query()
-        var goals = [Goal]()
+        var goals: [Goal]?
         
         query!.whereKey("User", equalTo: user)
         query!.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
@@ -119,24 +121,27 @@ class Goal: PFObject, PFSubclassing {
             }
         }
         
-        return goals
         
+        return goals!
     }
     
     
     
-    func getTeamObjectFromTeamObjectId(id: String?) -> Team {
-        let query = Team.query()
-        var team: Team?
-        
-        query!.whereKey("objectId", equalTo: id!)
-        query!.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-            if error == nil {
-                if let objects = objects as? [Team], firstTeam = objects.first {
-                    team = firstTeam
-                }
-            }
-        }
-        return team!
-    }
+//    func getTeamObjectFromTeamObjectId(id: String?) -> Team {
+//        let query = Team.query()
+//        var team: Team?
+//        
+//        query!.whereKey("objectId", equalTo: id!)
+//        query!.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+//            if error == nil {
+//                if let objects = objects as? [Team], firstTeam = objects.first {
+//                    print(objects)
+//                    print(firstTeam)
+//                    team = firstTeam
+//                }
+//            }
+//        }
+//        print(team!)
+//        return team!
+//    }
 }

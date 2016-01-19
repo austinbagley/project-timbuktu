@@ -18,7 +18,8 @@ class WeightGoalViewController: UIViewController {
 
     // MARK: Properties
     
-    var signupProcess = SignupProcess()
+    var signUp = SignUp()
+    var team: Team?
     
     // MARK: Outlets
     
@@ -38,10 +39,12 @@ class WeightGoalViewController: UIViewController {
         let startWeight = Double(self.startWeight.text!)!
         let goalWeight = Double(self.goalWeight.text!)!
         
-        
-        signupProcess.setWeightGoal(startWeight, endWeight: goalWeight, callBack: {
-            self.performSegueWithIdentifier(self.SEGUE_TO_DASHBOARD, sender: self)
-        })
+        signUp.createWeightGoalFromSignup(startWeight, endWeight: goalWeight, team: team!, callBack: ({
+            
+//            self.performSegueWithIdentifier(self.SEGUE_TO_DASHBOARD, sender: self)
+        }))
+       
+    
     }
     
 }
