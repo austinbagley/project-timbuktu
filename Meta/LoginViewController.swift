@@ -26,6 +26,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+    // Segue past Login is Current User isn't nil
+        
         if currentUser != nil {
             // NEEDSWORK: Segue to Dashboard
         } else {
@@ -53,6 +56,10 @@ class LoginViewController: UIViewController {
         
         
     }
+    
+    
+    
+    
     
     
     

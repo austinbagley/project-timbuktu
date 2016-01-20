@@ -21,7 +21,10 @@ class GoalTypeViewController: UIViewController {
     // MARK: Properties
     
     var isWeightGoal = true
-    var signupProcess = SignupProcess()
+//    var signupProcess = SignupProcess()
+    
+    var team: Team?
+    var signup = SignUp()
     
     // MARK: Outlets
     
@@ -31,6 +34,9 @@ class GoalTypeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("goal type vc team is: \(team!)")
+        self.signup.updateUserWithTeamId(self.team!)
+
         
     
         
@@ -39,9 +45,9 @@ class GoalTypeViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func nextScreen(sender: UIButton) {
-        signupProcess.setGoalType(self.isWeightGoal, callBack: {
+//        signupProcess.setGoalType(self.isWeightGoal, callBack: {
            self.performSelectedSegue()
-            }) 
+//            }) 
     }
     
     @IBAction func goalTypeControl(sender: UISegmentedControl) {
@@ -59,6 +65,14 @@ class GoalTypeViewController: UIViewController {
             self.performSegueWithIdentifier(SEGUE_TO_ACHIEVEMENT_GOAL, sender: self)
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == SEGUE_TO_WEIGHT_GOAL {
+            if let destVC = segue.destinationViewController as? WeightGoalViewController {
+                destVC.team = self.team            }
+        }
+    }
+
     
     
     
