@@ -28,6 +28,9 @@ class DashboardViewController: UIViewController {
     var teamEndDate: NSDate?
     var userFirstName: String?
     var userGoalText: String?
+    
+    
+    var userDashboard = UserDashboardData.sharedInstance
 
     
     // MARK: Outlets
@@ -41,84 +44,19 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getTeamInfo()
-        getGoalTypeFromUser()
-        
+        updateUI()
+      
     }
     
     // MARK: Actions
     
-    func getTeamInfo() {
-        let query = PFQuery(className: "Team")
-        query.getObjectInBackgroundWithId(self.getTeamIdFromUser()) {
-            (team: PFObject?, error: NSError?) -> Void in
-            if error == nil && team != nil {
-                print(team)
-                self.teamInfo = team
-                self.teamName = team!["teamName"] as? String
-                self.teamEndDate = team!["endDate"] as? NSDate!
-                self.updateUI()
-            } else {
-                print(error)
-            }
-        }
-    }
-    
-    func getTeamIdFromUser() -> String {
-        print("User Object ID is: \(self.currentUserId)")
-        
-        let query = PFUser.query()
-        query?.whereKey("objectId", equalTo: self.currentUserId)
-        let results = try? query?.findObjects()
-        let teamObjectId = results!![0]["teamObjectId"] as! String
-        print(teamObjectId)
-        self.teamObjectId = teamObjectId
-        return teamObjectId
-    }
-    
-    
-    func getGoalTypeFromUser() -> Bool {
-        let query = PFQuery(className: "GoalType")
-        var isWeightGoal = true
-        
-        query.whereKey("userId", equalTo: self.currentUserId)
-        let queryResult = try? query.getFirstObject() as PFObject!
-        
-        isWeightGoal = queryResult!["isWeightGoal"] as! Bool!
-        self.isWeightGoal = isWeightGoal
-        
-        self.goalId = queryResult!.objectId as String!
-        
-        print(isWeightGoal)
-        return isWeightGoal
-    }
-    
-    func getWeightGoalInfo() -> Bool {
-        let query = PFQuery(className: "WeightGoal")
-        
-        query.whereKey("userId", equalTo: self.currentUserId)
-        let queryResult = try? query.getFirstObject() as PFObject!
-        
-        isWeightGoal = queryResult!["isWeightGoal"] as! Bool!
-//        self.isWeightGoal = isWeightGoal
-        
-        self.goalId = queryResult!.objectId as String!
-        
-        print(isWeightGoal)
-        return isWeightGoal!
-    }
-
-    
-    
-    
-    
     
     func updateUI() {
-        self.challengeName.text = self.teamName
-        self.endDate.text = convertDate(self.teamEndDate!)
-        self.userFullName.text = PFUser.currentUser()!["firstName"] as? String!
+        challengeName.text = userDashboard.team?.teamChallengeName!
+        userFullName.text = (userDashboard.user!["firstName"] as? String)! + " " + (userDashboard.user!["lastName"] as? String)!
+        userGoal.text = "Lose \(String(userDashboard.goal!.totalWeightLoss!)) pounds"
+        endDate.text = convertDate((userDashboard.team?.teamEndDate)!)
     }
-    
     
     func convertDate(date: NSDate) -> String {
         
@@ -128,7 +66,7 @@ class DashboardViewController: UIViewController {
         return dateString
         
     }
-
+    
     
     
     
