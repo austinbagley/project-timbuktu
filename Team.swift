@@ -29,16 +29,16 @@ class Team: PFObject, PFSubclassing {
         return "Team"
     }
     
-    @NSManaged var teamName: String?
-    @NSManaged var teamChallengeName: String?
-    @NSManaged var teamPassword: String?
-    @NSManaged var teamEndDate: NSDate?
+    dynamic var teamName: String?
+    dynamic var teamChallengeName: String?
+    dynamic var teamPassword: String?
+    dynamic var teamEndDate: NSDate?
     
     
     
     // Create
     
-    init(teamName: String, teamChallengeName: String, teamPassword: String, endDate: NSDate) {
+    init(teamName: String, teamChallengeName: String, teamPassword: String, endDate: NSDate?) {
         super.init()
         self.teamName = teamName
         self.teamChallengeName = teamChallengeName

@@ -11,10 +11,14 @@ import Parse
 
 class LoginViewController: UIViewController {
     
+    // MARK: Constants
+    
+    let SEGUE_TO_DASHBOARD = "showDashboardFromLogin"
     
     // MARK: Properties
     
     var currentUser = PFUser.currentUser()
+    var userDashboard = UserDashboardData.sharedInstance
     
     // MARK: Outlets
     
@@ -27,10 +31,13 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
 
-    // Segue past Login is Current User isn't nil
+//     Segue past Login if Current User isn't nil
+        print("current user is \(currentUser)")
         
         if currentUser != nil {
-            // NEEDSWORK: Segue to Dashboard
+            self.userDashboard.refresh(PFUser.currentUser()!.objectId!, callBack: {
+            self.performSegueWithIdentifier(self.SEGUE_TO_DASHBOARD, sender: self)
+            })
         } else {
             // DO Nothing
         }
@@ -44,20 +51,34 @@ class LoginViewController: UIViewController {
         
         PFUser.logInWithUsernameInBackground(username, password: pw) {
             (user: PFUser?, error: NSError?) -> Void in
-            if user != nil {
-                // It worked
-                print("Logged in as \(PFUser?.self)")
-                self.performSegueWithIdentifier("showDashboardFromLogin", sender: self)
-            } else {
-                // Login failed
-                print("Login failed")
-            }
+            
+            print(PFUser.currentUser())
+            
+            let team = user!["team"] as? Team
+//            team?.fetchIfNeededInBackgroundWithBlock {
+//                (team: PFObject?, error: NSError?) -> Void in
+            print(team)
+            
+                if team != nil {
+                    
+                    if user != nil {
+                        print("user logged in as \(PFUser.currentUser()!)")
+                        self.userDashboard.refresh(PFUser.currentUser()!.objectId!, callBack: {
+                            self.performSegueWithIdentifier(self.SEGUE_TO_DASHBOARD, sender: self)
+                        })
+                        
+                    } else {
+                        print("login failed")
+                        print(error)
+                    }
+                    
+                }
+//            }
+            
         }
         
         
     }
-    
-    
     
     
     

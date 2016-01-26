@@ -74,7 +74,6 @@ class SignUp {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 print("team creation succeeded")
-                print("create team function team is: \(self.team)")
                 callBack()
             } else {
                 print("team creation failed")
@@ -95,7 +94,6 @@ class SignUp {
             if error != nil {
                 print(error)
             } else if let user = user {
-                user["teamObjectId"] = "Hello"
                 user["team"] = team as Team
                 user.saveInBackground()
             }
@@ -107,15 +105,18 @@ class SignUp {
     
     // Create Goal
     
-    func createWeightGoalFromSignup(startWeight: Double, endWeight: Double, team: Team, callBack: () -> Void) {
+    func createWeightGoalFromSignup(startWeight: Double, endWeight: Double, team: Team, callBack: () -> Void) -> Goal {
+        var result: Goal?
         let goal = Goal(startWeight: startWeight, endWeight: endWeight)
 //        let team: PFObject = PFObject(className: "team")
-       
+        
         goal.team = team
         
         print("Goal team is: \(goal.team)")
         print(goal)
         print(goal.team?.teamName)
+        
+        result = goal
         
         goal.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
@@ -131,7 +132,7 @@ class SignUp {
         }
         
         
-        
+        return result!
     }
     
     

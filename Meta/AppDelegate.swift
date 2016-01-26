@@ -12,10 +12,10 @@ import Parse
 
 
 // If you want to use any of the UI components, uncomment this line
-// import ParseUI
+//import ParseUI
 
 // If you want to use Crash Reporting - uncomment this line
-// import ParseCrashReporting
+//import ParseCrashReporting
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,15 +29,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Enable storing and querying data from Local Datastore.
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
-        Parse.enableLocalDatastore()
-
-        // ****************************************************************************
-        // ParseCrashReporting.enable()
-        
-//        CustomUser.registerSubclass()
         Team.registerSubclass()
         Goal.registerSubclass()
         SubGoal.registerSubclass()
+  
+        Parse.enableLocalDatastore()
+
+        // ****************************************************************************
+//         ParseCrashReporting.enable()
+        
+       
         
         Parse.setApplicationId("rJNWVh8k1aXO0LCDASrFX9pCqRf5kvYSbRw8BT50",
             clientKey: "1wmj7BmKy8WU1Rt4N2J2j78YYTRYGn9CV282inI5")
