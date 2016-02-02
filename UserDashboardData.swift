@@ -27,17 +27,16 @@ class UserDashboardData {
     // Actions
     
     func refresh(user: String, callBack: () -> Void) {
-        let user = user
+        self.user = PFUser.currentUser()!
+        let teamId = PFUser.currentUser()!["teamObjectId"] as? String
+        print(teamId!)
+        let teamQuery = PFQuery(className: "Team")
         
-        let userQuery = PFUser.query()
-        userQuery!.getObjectInBackgroundWithId(user) {
-            (user: PFObject?, error: NSError?) -> Void in
-            if error != nil {
-                print(error)
-            } else if let user = user {
-                self.user = PFUser.currentUser()!
-                self.team = user["team"] as? Team
-                print(self.team)
+        
+        teamQuery.getObjectInBackgroundWithId(teamId!) {
+            (team: PFObject?, error: NSError?) -> Void in
+            if error == nil && team != nil {
+                self.team = team as? Team
                 
                 let goalQuery = Goal.query()!
                 goalQuery.whereKey("user", equalTo: self.user!)
@@ -54,9 +53,26 @@ class UserDashboardData {
                         }
                     }
                 }
-                
+            } else {
+                print(error)
             }
         }
+        
+//        let userQuery = PFUser.query()
+//        userQuery!.getObjectInBackgroundWithId(user) {
+//            (user: PFObject?, error: NSError?) -> Void in
+//            if error != nil {
+//                print(error)
+//            } else if let user = user {
+//                self.team = user["team"] as? Team
+//                
+//                self.user = PFUser.currentUser()!
+//                print(self.team)
+        
+        
+        
+//            }
+//        }
     }
     
     

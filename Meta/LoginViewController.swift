@@ -52,32 +52,16 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsernameInBackground(username, password: pw) {
             (user: PFUser?, error: NSError?) -> Void in
             
-            print(PFUser.currentUser())
-            
-            let team = user!["team"] as? Team
-//            team?.fetchIfNeededInBackgroundWithBlock {
-//                (team: PFObject?, error: NSError?) -> Void in
-            print(team)
-            
-                if team != nil {
-                    
-                    if user != nil {
-                        print("user logged in as \(PFUser.currentUser()!)")
-                        self.userDashboard.refresh(PFUser.currentUser()!.objectId!, callBack: {
-                            self.performSegueWithIdentifier(self.SEGUE_TO_DASHBOARD, sender: self)
-                        })
-                        
-                    } else {
-                        print("login failed")
-                        print(error)
-                    }
-                    
-                }
-//            }
-            
+            if user != nil {
+                print("user logged in as \(PFUser.currentUser()!)")
+                self.userDashboard.refresh(PFUser.currentUser()!.objectId!, callBack: {
+                    self.performSegueWithIdentifier(self.SEGUE_TO_DASHBOARD, sender: self)
+                })
+            } else {
+                print("login failed")
+                print(error)
+            }
         }
-        
-        
     }
     
     

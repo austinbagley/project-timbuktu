@@ -17,7 +17,6 @@
 		9D1776FA1C480D38004B85C2 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1776F91C480D38004B85C2 /* Goal.swift */; };
 		9D1776FF1C482264004B85C2 /* SubGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1776FE1C482264004B85C2 /* SubGoal.swift */; };
 		9D1777011C482F24004B85C2 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1777001C482F23004B85C2 /* SignUp.swift */; };
-		9D1777071C4C3AFB004B85C2 /* SignUpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1777061C4C3AFB004B85C2 /* SignUpData.swift */; };
 		9D1777091C4C416E004B85C2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1777081C4C416E004B85C2 /* RegisterViewController.swift */; };
 		9DBF62361C3AF1C400042643 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF62351C3AF1C400042643 /* ColorExtension.swift */; };
 		9DE085B01C45AF5A009A8DE6 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE085AF1C45AF5A009A8DE6 /* Team.swift */; };
@@ -61,7 +60,6 @@
 		9D1776FB1C481C15004B85C2 /* Meta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Meta-Bridging-Header.h"; sourceTree = "<group>"; };
 		9D1776FE1C482264004B85C2 /* SubGoal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubGoal.swift; sourceTree = SOURCE_ROOT; };
 		9D1777001C482F23004B85C2 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = SOURCE_ROOT; };
-		9D1777061C4C3AFB004B85C2 /* SignUpData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpData.swift; sourceTree = SOURCE_ROOT; };
 		9D1777081C4C416E004B85C2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
 		9DBF62351C3AF1C400042643 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		9DE085AF1C45AF5A009A8DE6 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = SOURCE_ROOT; };
@@ -218,7 +216,6 @@
 				9D1776F91C480D38004B85C2 /* Goal.swift */,
 				9D1776FE1C482264004B85C2 /* SubGoal.swift */,
 				9D1777001C482F23004B85C2 /* SignUp.swift */,
-				9D1777061C4C3AFB004B85C2 /* SignUpData.swift */,
 				9DE501991C4F1001002BDC3C /* UserDashboardData.swift */,
 				9DE5019B1C4F100D002BDC3C /* TeamDashboardData.swift */,
 			);
@@ -337,7 +334,6 @@
 				9DF0CE6A1C3C5B17004C98A2 /* JoinTeamViewController.swift in Sources */,
 				9DF0CE661C3C5B17004C98A2 /* LaunchViewController.swift in Sources */,
 				9DE501981C4F0F61002BDC3C /* DashboardViewController_old.swift in Sources */,
-				9D1777071C4C3AFB004B85C2 /* SignUpData.swift in Sources */,
 				9DBF62361C3AF1C400042643 /* ColorExtension.swift in Sources */,
 				9DF0CE7F1C3C5BB3004C98A2 /* Dashboard.swift in Sources */,
 				9D1776FF1C482264004B85C2 /* SubGoal.swift in Sources */,

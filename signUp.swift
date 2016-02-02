@@ -94,7 +94,7 @@ class SignUp {
             if error != nil {
                 print(error)
             } else if let user = user {
-                user["team"] = team as Team
+                user["teamObjectId"] = team.objectId! as String
                 user.saveInBackground()
             }
         }
